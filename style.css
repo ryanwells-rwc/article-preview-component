@@ -1,0 +1,267 @@
+/* manrope-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/manrope-v20-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* manrope-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/manrope-v20-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* manrope-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/manrope-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  line-height: 1.4;
+  background-color: #ecf2f8;
+}
+
+.text-preset-1 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.25px;
+  font-weight: 700;
+}
+
+.text-preset-2-medium {
+  font-size: 0.8125rem;
+  letter-spacing: 0.12%;
+  font-weight: 500;
+}
+
+.text-preset-2-bold {
+  font-size: 0.8125rem;
+  letter-spacing: 0.12%;
+  font-weight: 700;
+}
+
+.text-preset-3 {
+  font-size: 0.8125rem;
+  letter-spacing: 25%;
+  font-weight: 400;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(72, 85, 106, 0.2);
+  border-radius: 0.625rem;
+  margin: 4rem 1.5rem;
+  overflow: hidden;
+}
+main .drawers {
+  width: 100%;
+  object-fit: cover;
+}
+main .text-container {
+  padding: 0 1.875rem;
+  margin-bottom: 1rem;
+}
+main .text-container p.text-preset-1 {
+  color: #48556a;
+  margin-bottom: 1.5rem;
+}
+main .text-container p.text-preset-2-medium {
+  color: #6e8098;
+}
+main .share-container {
+  position: relative;
+  overflow: hidden;
+}
+main .share-container .avatar-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.125rem;
+}
+main .share-container .avatar-content img {
+  border-radius: 50%;
+}
+main .share-container .avatar-content .name-date-container {
+  margin-right: 3rem;
+}
+main .share-container .avatar-content .name-date-container p.text-preset-2-bold {
+  color: #48556a;
+}
+main .share-container .avatar-content .name-date-container p.text-preset-2-medium {
+  color: #9daec2;
+}
+main .share-container .avatar-content .icon-circle {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main .share-container .avatar-content .icon-circle.invert {
+  background-color: #6e8098;
+  z-index: 11;
+  top: 10px;
+}
+main .share-container .avatar-content .icon-circle.invert svg path.fill-white {
+  fill: #fff;
+}
+main .share-container .overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #48556a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 10;
+  transform: translateY(100%);
+  transition: all 0.4s ease-out;
+}
+main .share-container .overlay-layer p.text-preset-3 {
+  color: #9daec2;
+}
+main .share-container .overlay-layer .social-media-icons {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2.5rem;
+}
+main .share-container .overlay-layer.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+main .share-container.active .overlay-layer {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--c-white);
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 768px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "drawers text-1" "drawers text-2" "drawers main-content";
+    gap: 0;
+    margin: 0 5rem;
+    overflow: visible;
+    max-width: 608px;
+  }
+  main .drawers {
+    grid-area: drawers;
+    width: 229px;
+    height: 346px;
+    object-fit: cover;
+    display: block;
+    align-self: end;
+    border-radius: 10px 0 0 10px;
+  }
+  main .text-container {
+    margin-top: 41px;
+    margin-right: 1.5rem;
+  }
+  main .text-container .text-preset-1 {
+    grid-area: text-1;
+  }
+  main .text-container .text-preset-2-medium {
+    grid-area: text-2;
+  }
+  main .share-container {
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+  }
+  main .share-container .avatar-content {
+    grid-area: main-content;
+    justify-content: flex-start;
+    margin-left: 2rem;
+  }
+  main .share-container .avatar-content .icon-circle {
+    position: relative;
+    right: 3rem;
+    margin-left: auto;
+  }
+  main .share-container .overlay-layer {
+    position: absolute;
+    top: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 248px;
+    height: 55px;
+    background-color: #48556a;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .share-container .overlay-layer::after {
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 17px;
+    border-style: solid;
+    border-color: #48556a transparent transparent transparent;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main {
+    max-width: 730px;
+  }
+  main .drawers {
+    width: 285px;
+    height: 280px;
+  }
+  main .share-container .overlay-layer {
+    left: 58%;
+    transform: translateX(-50%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
